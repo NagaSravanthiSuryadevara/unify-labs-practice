@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unified Component Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- THEME TOGGLE (Hidden Checkbox) -->
+  <input type="checkbox" id="theme-toggle" hidden>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">UnifyUI</div>
+
+    <!-- Hamburger Toggle -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Components</a></li>
+      <li><a href="#">About</a></li>
+      <li>
+        <label for="theme-toggle" class="theme-label">Toggle Theme</label>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- MAIN SECTION -->
+  <section>
+    <h1>Unified Component Library</h1>
+    <p>Day 7 - Responsive Navbar + Animated Buttons + Dark Mode</p>
+
+    <div class="button-group">
+      <button class="btn neon-btn">Neon Glow</button>
+      <button class="btn rotate-btn">Rotating Border</button>
+      <button class="btn micro-btn">Micro Animation</button>
+    </div>
+  </section>
+
+</body>
+</html>
