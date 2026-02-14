@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Resume Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to Content</a>
+
+<!-- Dark Mode Toggle -->
+<input type="checkbox" id="theme-toggle">
+
+<header>
+  <nav class="navbar">
+    <h1 class="logo">My Portfolio</h1>
+
+    <!-- Mobile Menu Toggle -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <label for="theme-toggle" class="toggle-btn">🌙</label>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+
+    <article class="about-container">
+      <div class="avatar">NS</div>
+      <p>
+        I am an aspiring Web Developer passionate about building responsive,
+        accessible, and interactive web applications using semantic HTML5 and
+        modern CSS techniques.
+      </p>
+    </article>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <article class="skill-card">HTML5</article>
+      <article class="skill-card">CSS3</article>
+      <article class="skill-card">Responsive Design</article>
+      <article class="skill-card">Git & GitHub</article>
+      <article class="skill-card">UI/UX Basics</article>
+      <article class="skill-card">Animations</article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <figure class="project-card">
+      <div class="project-avatar gradient1">RN</div>
+      <figcaption>
+        <h3>Responsive Navbar</h3>
+        <p>Sticky navigation with mobile hamburger toggle and smooth scroll.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="project-card">
+      <div class="project-avatar gradient2">AB</div>
+      <figcaption>
+        <h3>Animated Buttons</h3>
+        <p>Neon glow and gradient border styled interactive buttons.</p>
+      </figcaption>
+    </figure>
+
+    <figure class="project-card">
+      <div class="project-avatar gradient3">DM</div>
+      <figcaption>
+        <h3>Dark Mode System</h3>
+        <p>Complete theme switch using CSS variables.</p>
+      </figcaption>
+    </figure>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<aside class="aside">
+  <p>Available for internships and freelance opportunities.</p>
+</aside>
+
+<footer>
+  <p>© 2026 My Portfolio | Built with HTML & CSS</p>
+</footer>
+
+</body>
+</html>
