@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    border: 2px solid #00ff00;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+input {
+    padding: 5px;
+    margin: 10px;
+    background: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    background: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003300;
+}
+
+.hidden {
+    display: none;
+}
+
+#output {
+    margin-top: 20px;
+    min-height: 80px;
+    border-top: 1px solid #00ff00;
+    padding-top: 10px;
+}
