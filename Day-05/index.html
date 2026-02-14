@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevConf 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- Status Message -->
+<p id="status" class="status-message"></p>
+
+<header class="header">
+  <div class="container nav-wrapper">
+    <div class="logo">DevConf 2026</div>
+
+    <nav class="nav">
+      <ul class="nav-list" id="navList">
+        <li><a href="#">Home</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#register">Register</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-content">
+    <h1 class="hero-title">The Future of Technology Starts Here</h1>
+    <p class="hero-subtitle">Join the brightest developers in 2026.</p>
+    <button class="btn btn-primary">Get Tickets</button>
+  </div>
+</section>
+
+<section id="speakers" class="section">
+  <div class="container">
+    <h2 class="section-title">Featured Speakers</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Speaker">
+        <h3>Jane Doe</h3>
+        <p>AI Researcher</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Speaker">
+        <h3>John Smith</h3>
+        <p>Cloud Architect</p>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Speaker">
+        <h3>Emily Davis</h3>
+        <p>Cybersecurity Expert</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="register" class="section">
+  <div class="container center">
+    <h2 class="section-title">Register Now</h2>
+    <button class="btn btn-secondary pulse">Early Bird Offer</button>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Fix for status error
+  const statusElement = document.getElementById("status");
+  if (statusElement) {
+    statusElement.innerText = "Lab Session 5 Started";
+  }
+
+  // Hamburger menu
+  const hamburger = document.getElementById("hamburger");
+  const navList = document.getElementById("navList");
+
+  hamburger.addEventListener("click", function () {
+    navList.classList.toggle("active");
+  });
+
+  // Close mobile menu when link clicked
+  document.querySelectorAll(".nav-list a").forEach(function(link) {
+    link.addEventListener("click", function() {
+      navList.classList.remove("active");
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>
