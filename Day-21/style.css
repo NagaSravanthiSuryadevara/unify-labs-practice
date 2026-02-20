@@ -1,96 +1,64 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
 
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+body.light {
+    background-color: #f4f4f4;
+    color: #222;
+}
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 350px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-top: 100px;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #333;
+.toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
 }
 
-.search-box {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+.toggle-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.search-box input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
 }
 
-.search-box button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  background: #4facfe;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
 }
 
-.search-box button:hover {
-  background: #00c6ff;
+input:checked + .slider {
+    background-color: #2196F3;
 }
 
-.weather-card {
-  margin-top: 15px;
-}
-
-.temp {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #eee;
-  border-top: 4px solid #4facfe;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 10px auto;
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-.error {
-  color: red;
-  margin-top: 10px;
-}
-
-.hidden {
-  display: none;
+input:checked + .slider:before {
+    transform: translateX(30px);
 }
