@@ -1,0 +1,154 @@
+/* ===============================
+   PROJECT NEXUS - Colorful Theme
+================================= */
+
+:root {
+  --bg: linear-gradient(135deg, #667eea, #764ba2);
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+  --accent: #ffcc70;
+  --button: #ff6b6b;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text: #ffffff;
+  --accent: #00f5d4;
+  --button: #f15bb5;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  transition: 0.4s ease;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* ===== Controls ===== */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+input, select {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+input::placeholder {
+  color: #eee;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  background: var(--button);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== Card Grid ===== */
+
+main {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Card Styling ===== */
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* ===== Loader ===== */
+
+.loader {
+  border: 5px solid rgba(255,255,255,0.3);
+  border-top: 5px solid var(--accent);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Error Message ===== */
+
+.error {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #ffdddd;
+}
+
+/* ===== Hidden Utility ===== */
+
+.hidden {
+  display: none;
+}
