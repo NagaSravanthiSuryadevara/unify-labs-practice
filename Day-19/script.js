@@ -1,32 +1,51 @@
-const addBtn = document.getElementById("addBtn");
 const taskInput = document.getElementById("taskInput");
+const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
+const taskCount = document.getElementById("taskCount");
+const clearAll = document.getElementById("clearAll");
 
 addBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") addTask();
+});
+
+clearAll.addEventListener("click", () => {
+  taskList.innerHTML = "";
+  updateCount();
+});
 
 function addTask() {
-    const taskText = taskInput.value.trim();
+  const text = taskInput.value.trim();
+  if (text === "") return;
 
-    if (taskText === "") return;
+  const li = document.createElement("li");
 
-    const li = document.createElement("li");
-    li.textContent = taskText;
+  const span = document.createElement("span");
+  span.textContent = text;
 
-    li.addEventListener("click", function () {
-        li.classList.toggle("completed");
-    });
+  span.addEventListener("click", () => {
+    span.classList.toggle("completed");
+  });
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.classList.add("delete-btn");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "✕";
+  deleteBtn.classList.add("delete-btn");
 
-    deleteBtn.addEventListener("click", function (e) {
-        e.stopPropagation(); // Prevent toggle when deleting
-        taskList.removeChild(li);
-    });
+  deleteBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    li.remove();
+    updateCount();
+  });
 
-    li.appendChild(deleteBtn);
-    taskList.appendChild(li);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+  taskList.appendChild(li);
 
-    taskInput.value = "";
+  taskInput.value = "";
+  updateCount();
+}
+
+function updateCount() {
+  const total = taskList.children.length;
+  taskCount.textContent = `${total} Task${total !== 1 ? "s" : ""}`;
 }
